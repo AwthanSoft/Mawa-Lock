@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\RandomProject\00\RandomSolution\Mawa.Random\Mawa.Random.csproj" />
+  </ItemGroup>
+
 </Project>
