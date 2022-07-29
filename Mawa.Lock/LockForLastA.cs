@@ -13,7 +13,16 @@
 
 //        ObjectLock lastId_lock;
 //        string _last_id = string.Empty;
-//        string _running_id = string.Empty;
+//        //string last_id
+//        //{
+//        //    get
+//        //    {
+//        //        lastId_lock.open_lock();
+//        //        string id = _last_id;
+//        //        lastId_lock.close_lock();
+//        //        return id;
+//        //    }
+//        //}
 //        string GetId()
 //        {
 //            lastId_lock.open_lock();
@@ -21,20 +30,6 @@
 //            _last_id = id;
 //            lastId_lock.close_lock();
 //            return id;
-//        }
-
-//        public bool IsThereWaiter
-//        {
-//            get
-//            {
-//                if (string.IsNullOrEmpty(_last_id))
-//                    return false;
-
-//                if (_running_id.Equals(_last_id))
-//                    return false;
-//                else
-//                    return true;
-//            }
 //        }
 
 
@@ -53,7 +48,6 @@
 //                    return false;
 //                this.is_Open = true;
 //                this.is_inUsing = true;
-//                _running_id = waiter_id;
 //            }
 //            return true;
 //        }
@@ -69,7 +63,6 @@
 //                else
 //                {
 //                    sum_error++;
-//                    throw new Exception();
 //                }
 //                this.is_Open = false;
 //                this.is_inUsing = false;
