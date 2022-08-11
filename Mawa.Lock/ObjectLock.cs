@@ -38,9 +38,9 @@ namespace Mawa.Lock
             }
         }
 
-        public async Task open_lock_Async()
+        public Task open_lock_Async()
         {
-            await Task.Run(() =>
+            return Task.Run(() =>
             {
                 lock (opening_Lock)
                 {
