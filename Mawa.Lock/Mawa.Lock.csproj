@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RepositoryUrl>https://github.com/AwthanSoft/Mawa-Lock</RepositoryUrl>
+    <Copyright>© 2021-2022 AwthanSoft</Copyright>
+    <RepositoryType>github</RepositoryType>
+    <Authors>AwthanSoft</Authors>
+    <Product>Mawa Locks</Product>
+    <Version>22.9.7</Version>
+    <AssemblyVersion>22.9.7.1</AssemblyVersion>
+    <FileVersion>22.9.7.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
