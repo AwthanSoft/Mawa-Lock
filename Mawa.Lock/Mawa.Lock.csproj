@@ -7,9 +7,9 @@
     <RepositoryType>github</RepositoryType>
     <Authors>AwthanSoft</Authors>
     <Product>Mawa Locks</Product>
-    <Version>22.9.7</Version>
-    <AssemblyVersion>22.9.7.1</AssemblyVersion>
-    <FileVersion>22.9.7.1</FileVersion>
+    <Version>22.10.06</Version>
+    <AssemblyVersion>22.10.06.2</AssemblyVersion>
+    <FileVersion>22.10.06.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

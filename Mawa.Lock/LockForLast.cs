@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Mawa.Lock
@@ -62,9 +63,35 @@ namespace Mawa.Lock
             }
             return true;
         }
+        public bool isContinue(CancellationToken cancellationToken)
+        {
+            string waiter_id = GetId();
+            lock (opening_Lock)
+            {
+                while (this.is_Open == true)
+                {
+                    if (cancellationToken.IsCancellationRequested)
+                        return false;
+                    if (_last_id != waiter_id)
+                        return false;
+                }
+                // as temp
+                if (_last_id != waiter_id)
+                    return false;
+                this.is_Open = true;
+                this.is_inUsing = true;
+                _running_id = waiter_id;
+            }
+            return true;
+        }
+
         public Task<bool> isContinueAsync()
         {
             return Task.Run<bool>(() => isContinue());
+        }
+        public Task<bool> isContinueAsync(CancellationToken cancellationToken)
+        {
+            return Task.Run<bool>(() => isContinue(cancellationToken), cancellationToken);
         }
 
         public void close_lock()
